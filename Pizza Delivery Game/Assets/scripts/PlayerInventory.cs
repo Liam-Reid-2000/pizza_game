@@ -8,7 +8,7 @@ public class PlayerInventory : MonoBehaviour
 {
 
     private int pizzaDeliveryNumber;
-    private double funds = 20;
+    private double funds = 0;
     public PlayerFundsText playerFundsText;
     public UpdateFundsText updateFundsText;
 

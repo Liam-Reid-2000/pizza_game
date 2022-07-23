@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class House : MonoBehaviour
 {
-    public GameObject successSign;
+    //public GameObject successSign;
     public GameManager gameManager;
     public int houseNumber = 99;
     private bool pizzaRecieved = false;
 
     void Start()
     {
-        successSign.SetActive(false);
+        //successSign.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -19,7 +19,7 @@ public class House : MonoBehaviour
         PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
         if (playerInventory.getPizzaDeliveryNumber() == houseNumber)
         {
-            successSign.SetActive(true);
+            //successSign.SetActive(true);
             if (gameManager.getPizzaDelivered() == false) gameManager.setPizzaDelivered(true);
         }
     }

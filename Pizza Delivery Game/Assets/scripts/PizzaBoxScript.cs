@@ -7,10 +7,11 @@ public class PizzaBoxScript : MonoBehaviour
     public GameObject player;
     private bool playerHasPizza;
     private Vector3 pizzaOffset = new Vector3(0f, 3f, 1f);
-    private Vector3 pizzaOrigionalLocation = new Vector3(15f, 2.5f, 20f);
+    private Vector3 pizzaOrigionalLocation = new Vector3(0.2f, 2.5f, 5.15f);
     private Quaternion pizzaRotation = new Quaternion();
     public GameManager gameManager;
     public PlayerUI playerUI;
+    public SFXPlaying sfx;
 
     public int deliveryHouseNumber = 99;
 
@@ -69,8 +70,9 @@ public class PizzaBoxScript : MonoBehaviour
 
     public void resetPizza()
     {
+        sfx.PlayCoins();
         pizzaBox.transform.SetParent(null);
-        pizzaBox.transform.SetPositionAndRotation(new Vector3(53.2f, 2.5f, -89f), pizzaRotation);
+        pizzaBox.transform.SetPositionAndRotation(new Vector3(0.2f, 2.5f, 5.15f), pizzaRotation);
         playerHasPizza = false;
         setRandomDeliveryHouseNumber();
         gameManager.setPizzaDelivered(false);
